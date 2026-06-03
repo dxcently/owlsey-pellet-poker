@@ -79,6 +79,24 @@ Playwright will open a headless browser and work through all questions sequentia
 
 The flake provides a pinned Bun and Chromium — no manual browser install or config edits needed.
 
+**1. Install Nix** (if not already installed)
+
+```bash
+curl -L https://nixos.org/nix/install | sh
+```
+
+Restart your shell after installation so `nix` is on your `PATH`.
+
+**2. Enable flakes**
+
+Nix flakes are still experimental. Add this to `~/.config/nix/nix.conf` (create it if it doesn't exist):
+
+```
+experimental-features = nix-command flakes
+```
+
+**3. Enter the dev shell and run**
+
 ```bash
 nix develop
 bun install
